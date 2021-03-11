@@ -1,38 +1,260 @@
-.App {
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Exo 2", sans-serif;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+a {
+  color: white;
+  cursor: pointer;
+}
+body {
+  background: url('img/2.jpg') fixed center;
+  background-size: cover;
+}
+.wrapper {
+  width: 960px;
+  margin: auto;
+}
+
+.header {
+  width: 100%;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-image: url(img/panic_blue.png);
+  background-size: 280px;
+  background-repeat: no-repeat;
+  background-position: left 30px bottom 30px;
+  margin: auto;
+  margin-top: 40px;
+  height: 300px;
+  border-radius: 15px;
+}
+.title {
+  position: relative;
+  padding-left: 400px;
+  padding-top: 75px;
+  font-size: 5.5em;
+  text-shadow: #4496ff 0px 0px 20px;
+  color: black;
+}
+#header_background {
+  background: url(img/hex.png);
+}
+.nav {
+  width: 100%;
+  border-radius: 0 0 15px 15px;
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+li {
+  display: inline-block;
+  width: 33%;
+  color: black;
   text-align: center;
+  margin-top: 10px;
+  font-size: 2em;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.side_right {
+  width: 33%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-top: 20px;
+  float: right;
+  border-radius: 15px;
+  opacity: 0.9;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.alphaLink img {
+  background-color: #1e1f27;
+  width: 96%;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 7px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.discord {
+  width: 100%;
+  height: 500px;
+  border-radius: 15px;
+  padding: 0 7px 7px 7px;
+}
+
+.players {
+  width: 100%;
+  display: table;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-top: 20px;
+  padding: 60px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.streams {
+  float: left;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.streams > div {
+  display: inline-flex;
+  width: 430px;
+  height: 370px;
+  margin: 20px;
+  border-style: solid;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.streamImage {
+  margin: 10px 0 10px 0;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+}
+
+.streams > div:hover {
+  box-shadow: #4496ff 0px 0px 20px, inset #4496ff 0px 0px 20px;
+}
+.streams a {
+color: #000000;
+}
+.streams > .errorCard {
+  display: block;
+  margin: 0 auto;
+  border-style: none;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+.streams > .errorCard:hover {
+  box-shadow: none;
+}
+.errorImage {
+  border:none;
+}
+.player {
+  float: left;
+  width: 380px;
+  margin: 0 20px;
+  height: 60px;
+  padding-left: 80px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: white;
+  text-shadow: #000000 0px 0px 10px;
+}
+.player > div > a {
+  font-size: 34px;
+  line-height: 34px;
+  color: black;
+  margin-bottom: 3px;
+  text-shadow: #4496ff 0px 0px 20px;
+}
+.ZERG {
+  background: url(img/z.png) no-repeat left center;
+}
+.TERRAN {
+  background: url(img/t.png) no-repeat left center;
+}
+.PROTOSS {
+  background: url(img/p.png) no-repeat left center;
+}
+
+.pic {
+  height: 100%;
+  width: auto;
+  margin-left: 25%;
+}
+
+footer {
+  margin: auto;
+  margin-top: 20px;
+  position: relative;
+  width: 960px;
+  clear: both;
+}
+
+#social {
+  display: inline-block;
+  text-align: center;
+  font-size: 0px;
+}
+
+.social-img {
+  margin-right: 20px;
+  height: 50px;
+  width: 50px;
+  margin-bottom: 20px;
+}
+
+#blizzard {
+  width: auto;
+  background-image: url(img/blizzlogo.png);
+  background-position: right;
+  background-repeat: no-repeat;
+  float: right;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+span {
+  width: auto;
+  float: left;
+  text-align: right;
+  margin-right: 100px;
+}
+.dev {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+a {
+  text-decoration: none;
+}
+a:hover,
+a:focus,
+a:active {
+  text-shadow: #4496ff 0px 0px 20px;
+}
+.content {
+  width: 65%;
+  background-color: rgba(255, 255, 255, 0.5);
+  height: auto;
+  margin-top: 20px;
+  float: left;
+  border-radius: 15px;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.news {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 15px;
+  box-shadow: #4496ff 0px 0px 20px, inset #4496ff 0px 0px 20px;
+  margin: 15px 15px 30px 15px;
+  padding: 15px;
+  font-size: 25px;
+  text-align: justify;
+}
+.author {
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.hidden {
+  display: none;
 }
