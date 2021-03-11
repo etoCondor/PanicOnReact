@@ -46,14 +46,12 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <StreamList />
-        <PlayerList />
         <Header />
-        <div className="mainclass content">
-          <News posts={this.state.allNewsPosts} />
-        </div>
+        <News posts={this.state.allNewsPosts} />
         <Sidebar />
         <Footer />
+        <StreamList />
+        <PlayerList />
       </>
     );
   }

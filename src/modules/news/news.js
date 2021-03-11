@@ -10,6 +10,6 @@ const News = ({ posts }) => {
       </div>
     );
   });
-  return <>{elements}</>;
+  return <div className="mainclass content">{elements}</div>;
 };
 export default News;
