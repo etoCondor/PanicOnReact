@@ -1,6 +1,12 @@
-const PlayerList = function () {
-  console.log("nenene");
-  return null;
+import React from "react";
+import PlayerListItem from "../player-list-item";
+
+const PlayerList = () => {
+  return (
+    <div>
+      <PlayerListItem />
+    </div>
+  );
 };
 
 export default PlayerList;

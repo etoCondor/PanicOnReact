@@ -47,8 +47,8 @@ export default class App extends Component {
     return (
       <>
         <Header />
-        <News posts={this.state.allNewsPosts} />
-        <Sidebar />
+        {/* <News posts={this.state.allNewsPosts} />
+        <Sidebar /> */}
         <Footer />
         <StreamList />
         <PlayerList />
