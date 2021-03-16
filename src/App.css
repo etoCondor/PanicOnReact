@@ -274,10 +274,25 @@ only screen and (max-device-width : 940px){
   .nav {
     margin-top: 50px;
   }
+  .streams {
+    text-align: center;
+    padding-right: 50px;
+  }
+  .streams > div {
+    display: inline-flex;
+    height: 370px;
+    border-style: solid;
+    border-radius: 15px;
+    padding: 15px;
+    padding-right: 20px;
+    text-align: center;
+  } 
 
 }
 @media only screen and (max-width : 720px),
-only screen and (max-device-width : 720px){ 
+only screen and (max-device-width : 720px)
+{
+
   .side_right{
     display: none;
   }
