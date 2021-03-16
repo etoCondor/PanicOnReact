@@ -1,5 +1,4 @@
 import "./App.css";
-import "./media.css";
 import PlayerList from "./modules/player-list";
 import StreamList from "./modules/stream-list";
 import News from "./modules/news";

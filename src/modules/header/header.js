@@ -25,14 +25,6 @@ export default class Header extends React.Component {
                   </li>
                 );
               })}
-              {/* <li
-                className="navStreams"
-                onClick={() => {
-                  this.props.changePage("News");
-                }}
-              >
-                Трансляции
-              </li>  */}
             </ul>
           </div>
         </div>
