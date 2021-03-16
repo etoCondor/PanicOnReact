@@ -38,7 +38,7 @@ const Footer = () => {
           </span>
         </div>
       </a>
-      <p className="dev">© Panic Dev Team 2019-2021</p>
+      <p className="dev">© Panic Dev Team 2014-2021</p>
     </footer>
   );
 };
