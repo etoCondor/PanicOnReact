@@ -65,6 +65,10 @@ li {
   cursor: pointer;
 }
 
+.nav > ul > .activeClass {
+  text-shadow: #4496ff 0px 0px 20px;
+}
+
 .side_right {
   width: 33%;
   background-color: rgba(255, 255, 255, 0.5);
@@ -258,3 +262,8 @@ a:active {
 .hidden {
   display: none;
 }
+
+.spinner {
+  display: block;  height: 150px; width: 150px; margin: 0 auto; right: 0; left: 0;
+}
+

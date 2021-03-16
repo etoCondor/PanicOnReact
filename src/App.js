@@ -11,6 +11,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      content: "News",
       allNewsPosts: [
         {
           paragraph:
@@ -42,16 +43,42 @@ export default class App extends Component {
         },
       ],
     };
+    this.changePage = this.changePage.bind(this);
+  }
+  changePage(target) {
+    this.setState({ content: target });
   }
   render() {
+    let content = <></>;
+    if (this.state.content === "News") {
+      content = (
+        <>
+          <News posts={this.state.allNewsPosts} />
+          <Sidebar />
+        </>
+      );
+    } else if (this.state.content === "PlayerList") {
+      content = <PlayerList />;
+    } else if (this.state.content === "StreamList") {
+      content = <StreamList />;
+    }
     return (
       <>
-        <Header />
+        <Header
+          activePage={this.state.content}
+          changePage={this.changePage}
+          links={[
+            { page: "News", text: "Новости" },
+            { page: "PlayerList", text: "Состав команды" },
+            { page: "StreamList", text: "Трансляции" },
+          ]}
+        />
         {/* <News posts={this.state.allNewsPosts} />
-        <Sidebar /> */}
+        <Sidebar />
+        <PlayerList /> */}
+        {content}
         <Footer />
-        <StreamList />
-        <PlayerList />
+        {/* <StreamList /> */}
       </>
     );
   }

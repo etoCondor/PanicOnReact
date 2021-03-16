@@ -1,22 +1,42 @@
 import React from "react";
 
-const Header = () => {
-  return (
-    <div id="header_background">
-      <div className="header">
-        <a href="http://panicteam.ru">
-          <p className="title">Panic Team</p>
-        </a>
-        <div className="nav">
-          <ul>
-            <li className="navNews">Новости</li>
-            <li className="navPlayers">Состав команды</li>
-            <li className="navStreams">Трансляции</li>
-          </ul>
+export default class Header extends React.Component {
+  render() {
+    return (
+      <div id="header_background">
+        <div className="header">
+          <a href="http://panicteam.ru">
+            <p className="title">Panic Team</p>
+          </a>
+          <div className="nav">
+            <ul>
+              {this.props.links.map((link) => {
+                return (
+                  <li
+                    key={link.page}
+                    className={
+                      this.props.activePage === link.page ? "activeClass" : ""
+                    }
+                    onClick={() => {
+                      this.props.changePage(link.page);
+                    }}
+                  >
+                    {link.text}
+                  </li>
+                );
+              })}
+              {/* <li
+                className="navStreams"
+                onClick={() => {
+                  this.props.changePage("News");
+                }}
+              >
+                Трансляции
+              </li>  */}
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
-
-export default Header;
+    );
+  }
+}
