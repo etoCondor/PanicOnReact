@@ -25,7 +25,7 @@ export default class StreamList extends React.Component {
       return arr.map((item, i) => {
         const { title, user_name, user_login } = item;
         return (
-          <div>
+          <div key={user_login}>
             <a
               target="_blank"
               rel="noreferrer"
