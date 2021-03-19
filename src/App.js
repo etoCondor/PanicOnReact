@@ -6,12 +6,12 @@ import Header from "./modules/header";
 import Footer from "./modules/footer";
 import { Component } from "react";
 import Sidebar from "./modules/sidebar";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      content: "News",
       allNewsPosts: [
         {
           paragraph:
@@ -43,43 +43,36 @@ export default class App extends Component {
         },
       ],
     };
-    this.changePage = this.changePage.bind(this);
   }
-  changePage(target) {
-    this.setState({ content: target });
-  }
+
   render() {
-    let content = <></>;
-    if (this.state.content === "News") {
-      content = (
-        <>
-          <News posts={this.state.allNewsPosts} />
-          <Sidebar />
-        </>
-      );
-    } else if (this.state.content === "PlayerList") {
-      content = <PlayerList />;
-    } else if (this.state.content === "StreamList") {
-      content = <StreamList />;
-    }
     return (
-      <>
-        <Header
-          activePage={this.state.content}
-          changePage={this.changePage}
-          links={[
-            { page: "News", text: "Новости" },
-            { page: "PlayerList", text: "Состав команды" },
-            { page: "StreamList", text: "Трансляции" },
-          ]}
-        />
-        {/* <News posts={this.state.allNewsPosts} />
-        <Sidebar />
-        <PlayerList /> */}
-        {content}
-        <Footer />
-        {/* <StreamList /> */}
-      </>
+      <Router>
+        <div className="app">
+          <Header
+            links={[
+              { text: "Новости", route: "/" },
+              { text: "Состав команды", route: "/players" },
+              { text: "Трансляции", route: "/streams" },
+            ]}
+          />
+          <Route
+            path="/"
+            exact
+            component={() => {
+              return (
+                <>
+                  <News posts={this.state.allNewsPosts} />
+                  <Sidebar />
+                </>
+              );
+            }}
+          />
+          <Route exact path="/players" component={PlayerList} />
+          <Route exact path="/streams" component={StreamList} />
+          <Footer />
+        </div>
+      </Router>
     );
   }
 }

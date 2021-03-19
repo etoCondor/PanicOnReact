@@ -51,7 +51,7 @@ body {
 .nav {
   margin-top: 150px;
 }
-li {
+.nav > a {
   display: inline-grid;
   width: 33%;
   color: black;
@@ -62,7 +62,7 @@ li {
   cursor: pointer;
 }
 
-.nav > ul > .activeClass {
+.nav > .activeClass {
   text-shadow: #4496ff 0px 0px 20px;
 }
 
@@ -311,17 +311,23 @@ only screen and (max-device-width : 720px)
     text-shadow: #000000 0px 0px 10px;
     text-align: center;
   }
+  .players {
+    padding: 60px 0;
+  }
 .title {
   display: none;
 }
-ul {
+.nav {
   padding-top: 270px;
   display: block;
+
 }
 .header {
   background-position: top center ;
+  padding-bottom: 20px;
+
 }
-li {
+.nav>a {
   display:inherit;
   margin: auto;
   padding:5px;

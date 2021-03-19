@@ -1,6 +1,7 @@
 import React from "react";
+import { NavLink, withRouter, useLocation } from "react-router-dom";
 
-export default class Header extends React.Component {
+class Header extends React.Component {
   render() {
     return (
       <div id="header_background">
@@ -9,26 +10,23 @@ export default class Header extends React.Component {
             <p className="title">Panic Team</p>
           </a>
           <div className="nav">
-            <ul>
-              {this.props.links.map((link) => {
-                return (
-                  <li
-                    key={link.page}
-                    className={
-                      this.props.activePage === link.page ? "activeClass" : ""
-                    }
-                    onClick={() => {
-                      this.props.changePage(link.page);
-                    }}
-                  >
-                    {link.text}
-                  </li>
-                );
-              })}
-            </ul>
+            {this.props.links.map((link) => {
+              return (
+                <NavLink
+                  exact
+                  activeClassName="activeClass"
+                  to={link.route}
+                  key={link.route}
+                >
+                  {link.text}
+                </NavLink>
+              );
+            })}
           </div>
         </div>
       </div>
     );
   }
 }
+
+export default withRouter(Header);
