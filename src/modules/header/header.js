@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, withRouter, useLocation } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 
 class Header extends React.Component {
   render() {
