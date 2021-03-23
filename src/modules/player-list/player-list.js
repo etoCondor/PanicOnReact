@@ -1,27 +1,24 @@
-import React from "react";
-// import PlayerListItem from "../player-list-item";
+import React, { useState, useEffect } from "react";
 import fetchService from "../../services/fetchService";
 import Spinner from "../spinner";
 
-export default class PlayerList extends React.Component {
-  fetchService = new fetchService();
-  state = {
-    loading: true,
-    Player: null,
-  };
+function PlayerList() {
+  const [loading, updateLoading] = useState([]);
+  const [Player, updatePlayer] = useState([]);
+  const fetchData = new fetchService();
+  useEffect(() => {
+    updatePlayers();
+  });
 
-  componentDidMount() {
-    this.updatePlayers();
-  }
-
-  updatePlayers() {
-    this.fetchService.getAllPlayers().then((Player) => {
-      this.setState({ Player, loading: false });
+  function updatePlayers() {
+    fetchData.getAllPlayers().then((Player) => {
+      updateLoading(false);
+      updatePlayer(Player);
     });
   }
 
-  renderPlayers = (arr) => {
-    if (!this.state.loading) {
+  function renderPlayers(arr) {
+    if (!loading) {
       return arr.map((item, i) => {
         const { race, bnetaccount, nickname, league } = item;
         return (
@@ -36,13 +33,11 @@ export default class PlayerList extends React.Component {
         );
       });
     }
-  };
-  render() {
-    const items = this.renderPlayers(this.state.Player);
-    return (
-      <div className="mainclass players">
-        {this.state.loading ? <Spinner /> : items}
-      </div>
-    );
   }
+  const items = renderPlayers(Player);
+  return (
+    <div className="mainclass players">{loading ? <Spinner /> : items}</div>
+  );
 }
+
+export default PlayerList;
