@@ -1,12 +1,12 @@
 import React from "react";
-import LogoAlpha from "../../img/logo-alpha.svg";
+import logoAlpha from "../../img/logo-alpha.svg";
 
-const Sidebar = () => {
+function sidebar() {
   return (
     <div className="side_right">
       <div className="alphaLink">
         <a href="https://spire.gg/club/1" rel="noreferrer" target="_blank">
-          <img src={LogoAlpha} alt="Alpha cs2 Team League" />
+          <img src={logoAlpha} alt="Alpha cs2 Team League" />
         </a>
       </div>
 
@@ -19,6 +19,6 @@ const Sidebar = () => {
       ></iframe>
     </div>
   );
-};
+}
 
-export default Sidebar;
+export default sidebar;

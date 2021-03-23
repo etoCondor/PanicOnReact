@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
-import fetchService from "../../services/fetchService";
+import { getAllPlayers } from "../../services/fetchService";
 import Spinner from "../spinner";
 
 function PlayerList() {
   const [loading, updateLoading] = useState([]);
   const [Player, updatePlayer] = useState([]);
-  const fetchData = new fetchService();
+
   useEffect(() => {
     updatePlayers();
   });
 
-  function updatePlayers() {
-    fetchData.getAllPlayers().then((Player) => {
-      updateLoading(false);
-      updatePlayer(Player);
-    });
+  async function updatePlayers() {
+    const players = await getAllPlayers();
+    updateLoading(false);
+    updatePlayer(players);
   }
 
   function renderPlayers(arr) {

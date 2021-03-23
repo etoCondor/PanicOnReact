@@ -1,27 +1,24 @@
-import React from "react";
-import fetchService from "../../services/fetchService";
+import React, { useState, useEffect } from "react";
+import { getAllStreams } from "../../services/fetchService";
 import Spinner from "../spinner";
 import NoStreams from "../no-streams";
 
-export default class StreamList extends React.Component {
-  fetchService = new fetchService();
-  state = {
-    loading: true,
-    Streams: null,
-  };
+function StreamList() {
+  const [loading, setLoading] = useState([]);
+  const [Streams, setStreams] = useState([]);
 
-  componentDidMount() {
-    this.updateStreams();
+  useEffect(() => {
+    updateStreams();
+  });
+
+  async function updateStreams() {
+    const allStreams = await getAllStreams();
+    setLoading(false);
+    setStreams(allStreams);
   }
 
-  updateStreams() {
-    this.fetchService.getAllStreams().then((Streams) => {
-      this.setState({ Streams, loading: false });
-    });
-  }
-
-  renderStreams = (arr) => {
-    if (!this.state.loading) {
+  function renderStreams(arr) {
+    if (!loading) {
       return arr.map((item, i) => {
         const { title, user_name, user_login } = item;
         return (
@@ -44,18 +41,15 @@ export default class StreamList extends React.Component {
         );
       });
     }
-  };
-  render() {
-    let items = null;
-    if (this.state.loading === false && this.state.Streams.length === 0) {
-      items = <NoStreams />;
-    } else {
-      items = this.renderStreams(this.state.Streams);
-    }
-    return (
-      <div className="mainclass streams">
-        {this.state.loading ? <Spinner /> : items}
-      </div>
-    );
   }
+  let items = null;
+  if (loading === false && Streams.length === 0) {
+    items = <NoStreams />;
+  } else {
+    items = renderStreams(Streams);
+  }
+  return (
+    <div className="mainclass streams">{loading ? <Spinner /> : items}</div>
+  );
 }
+export default StreamList;

@@ -1,7 +1,7 @@
 import React from "react";
 import NewsItem from "../news-item";
 
-function News({ posts }) {
+function news({ posts }) {
   const elements = posts.map((item) => {
     const { id, ...itemProps } = item;
     return (
@@ -12,4 +12,4 @@ function News({ posts }) {
   });
   return <div className="mainclass content">{elements}</div>;
 }
-export default News;
+export default news;

@@ -1,2 +1,2 @@
-import NewsItem from "./news-item";
-export default NewsItem;
+import newsItem from "./news-item";
+export default newsItem;

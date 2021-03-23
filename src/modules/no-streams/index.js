@@ -1,2 +1,2 @@
-import NoStreams from "./no-streams";
-export default NoStreams;
+import noStreams from "./no-streams";
+export default noStreams;

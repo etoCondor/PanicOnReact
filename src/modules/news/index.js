@@ -1,2 +1,2 @@
-import News from "./news";
-export default News;
+import news from "./news";
+export default news;

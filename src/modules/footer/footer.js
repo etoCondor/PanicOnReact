@@ -2,7 +2,7 @@ import React from "react";
 import VKLogo from "../../img/vk.png";
 import TwitterLogo from "../../img/twitter.png";
 
-function Footer() {
+function footer() {
   return (
     <footer>
       <div id="social">
@@ -43,4 +43,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default footer;

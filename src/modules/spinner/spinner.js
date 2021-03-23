@@ -1,11 +1,11 @@
 import React from "react";
-import spinner from "../../img/spinner.svg";
+import spinnerImg from "../../img/spinner.svg";
 
-const Spinner = () => {
+function spinner() {
   return (
     <>
-      <img className="spinner" alt="loading" src={spinner} />
+      <img className="spinner" alt="loading" src={spinnerImg} />
     </>
   );
-};
-export default Spinner;
+}
+export default spinner;

@@ -1,6 +1,6 @@
 import sadPepe from "../../img/pepeSad.png";
 
-function NoStreams() {
+function noStreams() {
   return (
     <div className="errorCard">
       <img src={sadPepe} alt="sad Pepe" className="errorImage"></img>
@@ -8,4 +8,4 @@ function NoStreams() {
     </div>
   );
 }
-export default NoStreams;
+export default noStreams;
