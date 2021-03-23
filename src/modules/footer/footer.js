@@ -2,7 +2,7 @@ import React from "react";
 import VKLogo from "../../img/vk.png";
 import TwitterLogo from "../../img/twitter.png";
 
-const Footer = () => {
+function Footer() {
   return (
     <footer>
       <div id="social">
@@ -41,6 +41,6 @@ const Footer = () => {
       <p className="dev">© Panic Dev Team 2014-2021</p>
     </footer>
   );
-};
+}
 
 export default Footer;

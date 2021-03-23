@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, withRouter } from "react-router-dom";
 
-const Header = ({ links }) => {
+function Header({ links }) {
   return (
     <div id="header_background">
       <div className="header">
@@ -25,6 +25,6 @@ const Header = ({ links }) => {
       </div>
     </div>
   );
-};
+}
 
 export default withRouter(Header);

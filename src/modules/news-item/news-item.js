@@ -1,6 +1,6 @@
 import React from "react";
 
-const NewsItem = ({ paragraph, author, date }) => {
+function NewsItem({ paragraph, author, date }) {
   return (
     <>
       <p>{paragraph}</p>
@@ -11,5 +11,5 @@ const NewsItem = ({ paragraph, author, date }) => {
       </div>
     </>
   );
-};
+}
 export default NewsItem;
