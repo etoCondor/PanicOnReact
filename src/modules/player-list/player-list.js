@@ -4,7 +4,7 @@ import Spinner from "../spinner";
 
 function PlayerList() {
   const [loading, updateLoading] = useState([]);
-  const [Player, updatePlayer] = useState([]);
+  const [player, updatePlayer] = useState([]);
 
   useEffect(() => {
     updatePlayers();
@@ -33,7 +33,7 @@ function PlayerList() {
       });
     }
   }
-  const items = renderPlayers(Player);
+  const items = renderPlayers(player);
   return (
     <div className="mainclass players">{loading ? <Spinner /> : items}</div>
   );
