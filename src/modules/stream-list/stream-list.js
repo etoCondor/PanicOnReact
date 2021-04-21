@@ -9,7 +9,7 @@ function StreamList() {
 
   useEffect(() => {
     updateStreams();
-  });
+  }, []);
 
   async function updateStreams() {
     const allStreams = await getAllStreams();

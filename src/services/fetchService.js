@@ -18,7 +18,7 @@ async function getAllStreams() {
     {
       headers: {
         "client-id": "gp762nuuoqcoxypju8c569th9wz7q5",
-        Authorization: "Bearer 2v1au0vpd2mnbbdlkv193s6oknluyi",
+        Authorization: "Bearer 2rfuj3348figufo6g8pfu545eaj2ax",
       },
     }
   );

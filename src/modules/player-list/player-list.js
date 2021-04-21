@@ -8,7 +8,7 @@ function PlayerList() {
 
   useEffect(() => {
     updatePlayers();
-  });
+  }, []);
 
   async function updatePlayers() {
     const players = await getAllPlayers();
